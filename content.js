@@ -48,10 +48,10 @@ function showTooltip(text) {
         document.addEventListener('mousedown', handleClickOutside);
     }, 0);
 
-    // автоудаление через 7 секунд
-    setTimeout(() => {
+    // Удаление автоудаления через 7 секунд
+    /*setTimeout(() => {
         tooltip.style.opacity = 0;
         tooltip.style.transition = "opacity 0.3s ease";
         setTimeout(() => tooltip.remove(), 300);
-    }, 7000);
+    }, 7000);*/
 }
