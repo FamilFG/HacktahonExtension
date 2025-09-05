@@ -21,12 +21,6 @@ function showTooltip(text) {
     let tooltip = document.createElement('div');
     tooltip.className = "gpt-tooltip";
 
-    let closeBtn = document.createElement('button');
-    closeBtn.className = "close-btn";
-    closeBtn.innerText = "×";
-    closeBtn.onclick = () => tooltip.remove();
-    tooltip.appendChild(closeBtn);
-
     // текст
     let content = document.createElement('div');
     content.innerText = text || "Здесь появится ответ!";
@@ -42,6 +36,17 @@ function showTooltip(text) {
         tooltip.style.top = `${rect.bottom + window.scrollY + 6}px`;
         tooltip.style.left = `${rect.left + window.scrollX}px`;
     }
+
+    // Закрытие при клике вне тултипа
+    function handleClickOutside(e) {
+        if (!tooltip.contains(e.target)) {
+            tooltip.remove();
+            document.removeEventListener('mousedown', handleClickOutside);
+        }
+    }
+    setTimeout(() => {
+        document.addEventListener('mousedown', handleClickOutside);
+    }, 0);
 
     // автоудаление через 7 секунд
     setTimeout(() => {
