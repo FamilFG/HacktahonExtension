@@ -1,68 +1,37 @@
+/* Minimalistic, user-friendly tooltip inspired by Google design */
 
 .gpt-tooltip {
     all: unset;
     position: absolute;
-    background: linear-gradient(135deg, #1a1a1a 80%, #ffffff 100%);
-    color: #f5f5f5;
-    padding: 20px 26px;
-    border-radius: 18px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45), 0 1.5px 0 #fff inset;
-    border: 1.5px solid #222;
-    font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    max-width: 440px;
+    background: #fff;
+    color: #222;
+    padding: 16px 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+    border: 1px solid #e0e0e0;
+    font-family: 'Roboto', 'Arial', sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    max-width: 380px;
     z-index: 999999;
-    transition: transform 0.25s cubic-bezier(.4,2,.3,1), box-shadow 0.25s;
-    animation: fadeBounce 0.5s cubic-bezier(.4,2,.3,1);
-    letter-spacing: 0.03em;
-    backdrop-filter: blur(6px);
-    /* Add a subtle border glow for futuristic effect */
-    box-shadow: 0 0 0 2px #fff2, 0 8px 32px rgba(0,0,0,0.45);
-}
-
-@keyframes fadeBounce {
-    0% { transform: scale(0.85); opacity: 0; }
-    60% { transform: scale(1.08); opacity: 1; }
-    100% { transform: scale(1); }
+    transition: box-shadow 0.2s;
+    letter-spacing: 0.01em;
 }
 
 .gpt-tooltip:hover {
-    transform: scale(1.04);
-    box-shadow: 0 0 0 4px #fff4, 0 16px 48px rgba(0,0,0,0.55);
-    background: linear-gradient(135deg, #222 85%, #fff 100%);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    border-color: #bdbdbd;
 }
 
-/* Add a subtle glowing indicator for guidance */
-.gpt-tooltip::before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: -10px; left: 50%;
-    transform: translateX(-50%);
-    width: 36px; height: 6px;
-    background: linear-gradient(90deg, #fff, #222);
-    border-radius: 3px;
-    box-shadow: 0 0 8px #fff8;
-    opacity: 0.7;
-}
-
-/* Add a help icon for new users */
+.gpt-tooltip::before,
 .gpt-tooltip::after {
-    content: '❔';
-    position: absolute;
-    top: 18px; right: 18px;
-    font-size: 20px;
-    color: #fff;
-    opacity: 0.6;
-    pointer-events: none;
+    display: none;
 }
 
-/* Responsive for smaller screens */
 @media (max-width: 600px) {
     .gpt-tooltip {
-        padding: 14px 10px;
-        font-size: 14px;
+        padding: 10px 6px;
+        font-size: 13px;
         max-width: 95vw;
     }
 }
