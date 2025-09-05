@@ -1,0 +1,29 @@
+.gpt-tooltip {
+    all: unset;
+    position: absolute;
+    background: radial-gradient(circle at top left, #ff00cc, #3333ff);
+    color: #fff;
+    padding: 20px 24px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(255, 0, 200, 0.6);
+    border: 2px solid rgba(255,255,255,0.6);
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    animation: bounceIn 0.5s ease;
+    max-width: 440px;
+    z-index: 999999;
+    position: absolute;
+    transition: transform 0.3s ease;
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    60% { transform: scale(1.05); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+.gpt-tooltip:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+}
