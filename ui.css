@@ -13,7 +13,7 @@
     font-size: 15px;
     line-height: 1.5;
     max-width: 380px;
-    z-index: 999999;
+    z-index: 1000;
     transition: box-shadow 0.2s;
     letter-spacing: 0.01em;
 }
