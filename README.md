@@ -13,3 +13,11 @@
 ---
 
 ## 📂 Project Structure
+my-extension/
+│── manifest.json # Extension configuration
+│── background.js # Background service worker
+│── content.js # Script injected into pages
+│── style.css # Tooltip styles
+│── popup.html # Optional popup window
+│── popup.js # Popup logic
+│── icons/ # Extension icons
